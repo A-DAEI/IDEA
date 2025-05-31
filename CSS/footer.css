@@ -1,0 +1,50 @@
+      .footer {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      border-top: solid 1px rgb(224, 224, 224);
+    }
+      .footup{
+      height:70%;
+      display: flex;
+      font-weight: bold;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .footupimg{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 3%;
+    }
+    .footup img{
+      width: 15%;
+      margin-top: 1.5%;
+    }
+    .footupspans{
+      margin-top: 3%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .social{
+      margin-block: 4%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .social img{
+      width: 50px;
+    }
+    .footup span,img{
+      cursor: pointer;
+    }
+    .footdown{
+      height: 20%;
+      display: flex;
+      align-items: center;
+      color: rgb(147, 147, 147);
+      justify-content: space-evenly;
+    }
+    .footdown span{
+      cursor: pointer;
+      margin-bottom: 1%;
+    }
