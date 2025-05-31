@@ -1,0 +1,142 @@
+/* max-width 768px (tablet) */
+@media screen and (max-width: 768px) {
+    body{
+        padding-top: 210px;
+    }
+    .logo{
+        width: 200px;
+    }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 230px;
+  }
+
+  .headsearch {
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+  }
+
+  .right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .gridimg {
+    width: 100%;
+    height: auto;
+  }
+
+  .thumbnail {
+    padding: 5px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+
+  .footupspans {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .you{
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  .footupimg img{
+    width: 200px;
+  }
+
+  .footdown {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+/* max-width 480px (mobile) */
+@media screen and (max-width: 480px) {
+    body{
+        padding-top: 200px;
+    }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 220px;
+
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .headsearch {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+
+  .headsearch input {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .right {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .gridimg {
+    width: 100%;
+    height: auto;
+  }
+
+  .thumbnail {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.6rem;
+  }
+
+  .moveablediv {
+    min-width: 120px;
+    font-size: 0.75rem;
+  }
+
+  .footupspans, .footdown {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .footup img, .social img {
+    width: 20px;
+  }
+  .footupimg img{
+    width: 200px;
+  }
+
+  .buttonup {
+    bottom: 20px;
+    right: 20px;
+  }
+}
