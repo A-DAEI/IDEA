@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="robots" href="robots.txt">
+
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+
+  <link rel="canonical" href="https://yourdomain.com/signup.html" />  <!-- Replace with the correct URL for each page -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    *:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family:sans-serif , roboto, arial;
+      background-image: url("Other/BACK2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .p1 {
+      font-size: 40px;
+      font-weight: bold;
+      cursor: default;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .main {
+      background-color: rgba(60, 60, 60, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 30px;
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
+      border: solid 1px rgb(206, 206, 206);
+    }
+    
+    input {
+      padding: 20px 130px;
+      margin-top: 10px;
+      border-radius: 50px;
+      text-align: center;
+      border: none;
+      font-size: 17px;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      background-color: red;
+      border: none;
+      padding-block: 20px;
+      padding-inline: 20px;
+      border-radius: 40px;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 0 20px 1px rgb(83, 83, 83);
+    }
+
+    button:hover {
+      background-color: rgb(0, 21, 255);
+      color: black;
+      padding-inline: 40px;
+    }
+
+    .Login {
+      margin-top: 10px;
+      padding-inline: 60px;
+    }
+
+    /* Custom toggle switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    input::placeholder {
+      font-size: 17.3px;
+    }
+
+    .error {
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+  .main {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .p1 {
+    font-size: 30px;
+  }
+
+  input {
+    padding: 12px 15px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    max-width: 150px;
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .error {
+    font-size: 13px;
+  }
+
+  label.switch {
+    transform: scale(0.9);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <p class="p1">SIGN UP</p>
+
+    <div style="line-height: 0px;">
+    <div>
+      <input type="text" id="name" placeholder="Name" spellcheck="false" autocomplete="off">
+      <p style="margin-top: 10px;" id="nameError" class="error"></p>
+    </div>
+
+    <div>
+      <input type="text" id="lastname" placeholder="Last Name" spellcheck="false" autocomplete="off">
+      <p style="margin-top: 10px;" id="lastnameError" class="error"></p>
+    </div>
+
+    <div>
+      <input type="text" id="email" placeholder="E-mail" spellcheck="false" autocomplete="off">
+      <p style="margin-top: 10px;" id="emailError" class="error"></p>
+    </div>
+
+    <div>
+      <input type="password" id="password" placeholder="Password" spellcheck="false" autocomplete="off">
+      <p style="margin-top: 10px;" id="passwordError" class="error"></p>
+    </div>
+    </div>
+
+    <div style="margin: 10px; display: flex; align-items: center; gap: 10px; color: rgb(0, 0, 0); font-weight: bold;">
+      <label class="switch">
+        <input type="checkbox" id="showPassword" onclick="togglePassword()">
+        <span class="slider round"></span>
+      </label>
+      Show the password
+    </div>
+
+    <div class="Login">
+      <button onclick="signUp()">SIGN UP</button>
+    </div>
+  </div>
+
+  <script>
+    function signUp() {
+      const name = document.getElementById("name").value.trim();
+      const lastname = document.getElementById("lastname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const nameError = document.getElementById("nameError");
+      const lastnameError = document.getElementById("lastnameError");
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+
+      // Clear previous errors
+      nameError.innerText = "";
+      lastnameError.innerText = "";
+      emailError.innerText = "";
+      passwordError.innerText = "";
+
+      let valid = true;
+
+      if (!name) {
+        nameError.innerText = "Please enter your name.";
+        valid = false;
+      }
+
+      if (!lastname) {
+        lastnameError.innerText = "Please enter your last name.";
+        valid = false;
+      }
+
+      if (!email) {
+        emailError.innerText = "Please enter your E-mail.";
+        valid = false;
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          emailError.innerText = "Please enter a valid E-mail (e.g., example@gmail.com).";
+          valid = false;
+        }
+      }
+
+      if (!password) {
+        passwordError.innerText = "Please enter your password.";
+        valid = false;
+      } else if (password.length < 6) {
+        passwordError.innerText = "Password must be at least 6 characters long.";
+        valid = false;
+      }
+
+      if (valid) {
+              if (valid) {
+        // Redirect to index.html
+        window.location.href = "index.html";
+      }
+        console.log("Name:", name);
+        console.log("Last Name:", lastname);
+        console.log("Email:", email);
+        console.log("Password:", password);
+      }
+    }
+
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const checkbox = document.getElementById("showPassword");
+      passwordInput.type = checkbox.checked ? "text" : "password";
+    }
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="robots" href="robots.txt">
+
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+
+  <link rel="canonical" href="https://yourdomain.com/signin.html" />  <!-- Replace with the correct URL for each page -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    *:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family:sans-serif , roboto, arial;
+      background-image: url("Other/BACK2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .main {
+      background-color: rgba(60, 60, 60, 0.2);
+      border-radius: 30px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
+      border: solid 1px rgb(206, 206, 206);
+    }
+
+    .p1 {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    input {
+      padding: 20px 110px;
+      margin: 12px;
+      margin-bottom: 5px;
+      border-radius: 50px;
+      text-align: center;
+      border: none;
+      font-size: 17px;
+      width: 100%;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    input::placeholder {
+      font-size: 17.3px;
+    }
+
+    button {
+      background-color: rgb(0, 0, 0);
+      border: none;
+      color: rgb(255, 255, 255);
+      padding: 20px 15px;
+      width: 150px;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.4s;
+      margin-top: 10px;
+      box-shadow: 0 0 20px 1px rgb(83, 83, 83);
+    }
+
+    button:hover {
+      background-color: rgb(255, 255, 255);
+      color: black;
+    }
+
+    .google {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+    }
+
+    .img {
+      width: 60px;
+      height: 35px;
+      border-radius: 24px;
+      transition: 0.3s;
+    }
+
+    .img:hover {
+      width: 80px;
+      height: 50px;
+    }
+
+    .p3 {
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      transition: 0.4s;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .p3:hover {
+      color: rgb(34, 85, 255);
+    }
+
+    .signup {
+      text-decoration: none;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    .error {
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 3px;
+      text-align: center;
+    }
+
+    /* RESPONSIVE STYLES FOR MOBILE DEVICES */
+    @media (max-width: 600px) {
+      .main {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .p1 {
+        font-size: 30px;
+      }
+
+      input {
+        padding: 12px 15px;
+        font-size: 16px;
+      }
+
+      button {
+        width: 100%;
+        max-width: 150px;
+        font-size: 14px;
+        padding: 15px;
+      }
+
+      .p3 {
+        font-size: 17px;
+      }
+
+      span {
+        font-size: 17px !important;
+      }
+
+      .img {
+        width: 40px;
+        height: 25px;
+      }
+
+      .img:hover {
+        width: 50px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <p class="p1">WELCOME</p>
+
+    <form id="loginForm" novalidate>
+      <input style="margin: 0px;" type="email" id="email" placeholder="E-mail" required spellcheck="false" autocomplete="off" />
+      <p id="emailError" class="error"></p>
+
+      <input style="margin: 0px;" type="text" id="password" placeholder="Password" required spellcheck="false" autocomplete="off" />
+      <p id="passwordError" class="error"></p>
+
+
+      <button type="submit">LOGIN</button>
+    </form>
+
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 17px; gap: 20px;">
+      <a href="signup.html" class="signup">
+        <p class="p3">SIGN UP</p>
+      </a>
+  <a style="text-decoration: none; display: flex; justify-content: center; font-size: 20px;" href="support.html">
+      <span style="font-weight: bold; color: rgb(102, 19, 255);">SUPPORT</span>
+    </a>
+      
+    </div>
+  
+    <a href="https://www.google.com/" class="google">
+        <img class="img" src="Other/G.png" alt="Google Icon" />
+      </a>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let valid = true;
+
+      if (!emailRegex.test(email)) {
+        emailError.innerHTML = "Please enter a valid email address.";
+        valid = false;
+      }
+
+      if (password.length < 6) {
+        passwordError.innerHTML = "Password must be at least 6 characters.";
+        valid = false;
+      }
+
+      if (valid) {
+        // Redirect to index.html
+        window.location.href = "index.html";
+      }
+
+    });
+
+    function togglePassword() {
+      passwordInput.type = document.getElementById("showPassword").checked ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

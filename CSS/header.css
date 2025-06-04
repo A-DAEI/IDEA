@@ -1,0 +1,93 @@
+      .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 11px 34px;
+      background-color: white;
+      z-index: 1;
+      gap: 10px;
+      border-bottom: solid rgb(224, 224, 224) 1px;
+    }
+    .logo {
+      width: 100px;
+      flex-shrink: 0;
+    }
+    .headsearch {
+      display: flex;
+      align-items: center;
+      background-color: rgb(244, 244, 244);
+      border-radius: 30px;
+      padding: 6px 14px;
+      flex: 1 1 500px;
+      min-width: 200px;
+      max-width: 600px;
+      margin-left: 14px;
+    }
+    .headsearch input {
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 1rem;
+      flex: 1;
+      min-width: 50px;
+      padding: 5px 10px;
+    }
+    .headsearch span {
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+    .headsearch button {
+      border: none;
+      background-color: rgb(0, 0, 0);
+      border-radius: 50%;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    .search-icon {
+      width: 30px;
+      height: 30px;
+    }
+    .right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex: 1 1 auto;
+      min-width: 220px;
+    }
+    .right span {
+      white-space: nowrap;
+      cursor: pointer;
+      margin-inline: 10px;
+    }
+    .right span:last-of-type {
+      font-weight: bold;
+    }
+    .signup:hover{
+      color: blue;      
+    }
+    .support:hover{
+      color: blue;      
+    }
+    .right button {
+      border: none;
+      background-color: black;
+      color: white;
+      font-size: 1rem;
+      padding: 15px 22px;
+      border-radius: 26px;
+      font-weight: bold;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .right button:hover {
+      background-color: rgb(62, 62, 62);
+    }

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="robots" href="robots.txt">
+
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+
+  <link rel="canonical" href="https://yourdomain.com/support.html" />  <!-- Replace with the correct URL for each page -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUPPORT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    *:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+    body {
+      font-family:sans-serif , roboto, arial;
+      background-image: url("Other/BACK2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .whole {
+      background-color: rgba(60, 60, 60, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      max-width: 90%;
+      backdrop-filter: blur(10px);
+      border: solid 1px rgb(206, 206, 206);
+    }
+
+    .whole span {
+      font-weight: bold;
+      font-size: 35px;
+      margin-bottom: 15px;
+      color: #000000;
+      text-align: center;
+    }
+
+    .whole input, .whole textarea {
+      width: 100%;
+      padding: 15px 20px;
+      margin-top: 10px;
+      border-radius: 50px;
+      border: none;
+      font-size: 16px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .whole textarea {
+      resize: none;
+      border-radius: 20px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .whole input:focus, .whole textarea:focus {
+      outline: none;
+    }
+
+    .whole button {
+      font-weight: bold;
+      background-color: #0400fd;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.4s;
+      box-shadow: 0 0 20px 1px rgb(83, 83, 83);
+    }
+
+    .whole button:hover {
+      background-color: #000000;
+    }
+
+    .error {
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: center;
+    }
+    .spanhover:hover{
+      color: blue;
+    }
+
+    @media (max-width: 600px) {
+      .whole {
+        padding: 20px;
+        width: 90%;
+      }
+
+      .whole span {
+        font-size: 28px;
+      }
+
+      .whole input,
+      .whole textarea {
+        font-size: 15px;
+        padding: 12px 15px;
+      }
+
+      .whole button {
+        font-size: 14px;
+        padding: 12px 30px;
+      }
+
+      .error {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="whole">
+    <span>SUPPORT</span>
+
+    <form id="supportForm" onsubmit="validateForm(event)" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+      <input style="width: 80%;" type="text" id="email" placeholder="Email" spellcheck="false" autocomplete="off" />
+      <p id="emailError" class="error"></p>
+
+      <textarea id="message" placeholder="Your message" spellcheck="false" autocomplete="off"></textarea>
+      <p id="messageError" class="error"></p>
+
+      <button type="submit">SEND</button>
+    </form>
+    <a href="index.html" style="margin-top: 10%; text-decoration: none;">
+    <span class="spanhover" style="font-size: 1.5rem; transition: 0.4s;">Main website</span>
+    </a>
+  </div>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const emailError = document.getElementById("emailError");
+      const messageError = document.getElementById("messageError");
+
+      emailError.innerText = "";
+      messageError.innerText = "";
+
+      let valid = true;
+
+      if (!email) {
+        emailError.innerText = "Please enter your E-mail.";
+        valid = false;
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          emailError.innerText = "Please enter a valid E-mail (e.g., example@gmail.com).";
+          valid = false;
+        }
+      }
+
+      if (!message) {
+        messageError.innerText = "Please enter your message.";
+        valid = false;
+      } else if (message.length < 5) {
+        messageError.innerText = "Message must be at least 5 characters.";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Message sent successfully!");
+        console.log("Email:", email);
+        console.log("Message:", message);
+        // document.getElementById("supportForm").reset();
+      }
+    }
+  </script>
+
+</body>
+</html>
